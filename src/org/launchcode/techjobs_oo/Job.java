@@ -18,7 +18,8 @@ public class Job {
     //  the 'id' field.
 
     public Job() {
-        this.id = id;
+        id = nextId;
+        nextId++;
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
@@ -34,6 +35,15 @@ public class Job {
         return id;
     }
 
+    public String toString() {
+        return "\n" +
+                "ID: " + this.getId() + "\n" +
+                "Name: " + this.getName() + "\n" +
+                "Employer: " + this.getEmployer() + "\n" +
+                "Location: " + this.getLocation() + "\n" +
+                "Position Type: " + this.getPositionType() + "\n" +
+                "Core Competency: " + this.getCoreCompetency() + "\n";
+    }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
